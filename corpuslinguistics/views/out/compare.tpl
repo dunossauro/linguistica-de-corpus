@@ -1,3 +1,4 @@
+
 <html>
 {% include 'main_view.tpl' %}
    <body>
