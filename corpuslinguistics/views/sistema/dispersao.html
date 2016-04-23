@@ -1,0 +1,17 @@
+<html>
+{% include 'main_view.tpl' %}
+      <h1> Dispersão lexical</h1>
+      </br>
+      <h4>Selecione o arquivo que deseja encontrar relações entre palavras<h4>
+      </br>
+      <form action="/dispersao" method="post" enctype="multipart/form-data">
+      <h3>Palavra:</h3>
+         <input type="text" name="palavra" />
+        <h3>Arquivo:</h3>
+          <input type="file" name="arquivo"/>
+        </br>
+        <input type="submit" value="Upload"  />
+      </form>
+  </div>
+</body>
+</html>
