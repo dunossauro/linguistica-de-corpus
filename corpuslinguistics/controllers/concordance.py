@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from bottle import Bottle, jinja2_view, post, request
+from bottle import Bottle, jinja2_view, post, request, redirect
 from ..models.Auxiliar import Auxiliar, concord
 
 # -------------- Controle das views de concordancia
