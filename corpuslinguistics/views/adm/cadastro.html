@@ -1,19 +1,10 @@
-<html>
 {% include 'main_view.tpl' %}
- <div class="form-group" align="center">
-      <h1>Cadastrar</h1>
-      <form action="/cadastro" method="post" align="center">
-        Nome:    <input type="text" name="nome" style="height: 35px;"/>
-     </br>
-        E-mail    <input type="text" name="mail" style="height: 35px;"/>
-     </br>
-        <input type="submit" value="Upload" class="btn btn-primary"/>
-    </div>
-  </div>
-<li><a class="navbar-brand"href="/base">Verificar base de dados!</a>
 
-    <script src="/static/js/jquery-2.0.3.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
+<form method="POST" action="/cadastro">
+    <div>{{ form.username.label }}  : {{ form.username() }}</div>
+    <div>{{ form.email.label }}     : {{ form.email() }}</div>
+    <div>{{ form.password.label }}  : {{ form.password() }}</div>
+    <div>{{ form.butt() }}</div>
+</form>
 
-  </body>
-</html>
+<a class="navbar-brand"href="/base">Verificar base de dados!</a>
