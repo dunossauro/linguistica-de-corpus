@@ -1,0 +1,18 @@
+<html>
+{% include 'main_view.tpl' %}
+      <h1>Comparação</h1>
+      </br>
+      <h4>Selecione os arquivos que deseja comparar<h4>
+      </br>
+      <p>Lembre-se, eles devem ser duas listas de contagem  </p>
+      </br>
+      <form action="/comparacao" method="post" enctype="multipart/form-data">
+        <h3>Arquivo 1:</h3>        <input type="file" name="arquivo_0"/>
+        <h3>Arquivo 2:</h3>        <input type="file" name="arquivo_1"/>
+       </br>
+        <input type="submit" value="Upload" />
+      </form>
+
+  </div>
+  </body>
+</html>
