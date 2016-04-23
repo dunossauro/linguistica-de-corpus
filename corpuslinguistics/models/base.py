@@ -8,7 +8,7 @@ import sqlite3
 def c_table():
 	con = sqlite3.connect('base_usuarios.db')
 	cur = con.cursor()
-	cur.execute('CREATE TABLE IF NOT EXISTS USUARIOS(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOME TEXT NOT NULL, EMAIL TEXT NOT NULL);')
+	cur.execute('CREATE TABLE IF NOT EXISTS USUARIOS(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOME TEXT NOT NULL, EMAIL TEXT NOT NULL, SENHA TEXT NOT NULL);')
 
 # ------------- Classe para interagir com os outros projetos
 class Base:
@@ -22,7 +22,7 @@ class Base:
 		self.select = 'SELECT ID,NOME,EMAIL FROM USUARIOS'
 
         # -------------- Insert
-		self.insert = 'INSERT INTO USUARIOS (NOME, EMAIL) VALUES (?, ?)'
+		self.insert = 'INSERT INTO USUARIOS (NOME, EMAIL, SENHA) VALUES (?, ?, ?)'
 
 
 	def busca(self):
@@ -30,8 +30,8 @@ class Base:
 		return self.cur.fetchall()
 
     # -------------- Método que faz inserção no banco
-	def inserir_dados(self, nome, email):
-		self.cur.execute(self.insert, (nome, email))
+	def inserir_dados(self, nome, email, senha):
+		self.cur.execute(self.insert, (nome, email, senha))
 
 	def commit(self):
 		self.con.commit()
