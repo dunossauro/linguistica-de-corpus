@@ -1,6 +1,5 @@
 <html>
 {% include 'main_view.tpl' %}
-  {% if value == 1%}
    <body>
      <h1>{{ name }}</h1>
      <table>
