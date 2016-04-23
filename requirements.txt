@@ -3,3 +3,4 @@ click
 beaker
 jinja2
 nltk
+wtforms
