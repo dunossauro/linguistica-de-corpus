@@ -2,12 +2,15 @@
 {% include 'main_view.tpl' %}
    <body>
      <h1>Base de usuários</h1>
+   </br>
      <table>
-        <tr><th>ID</th><th>Usuário</th><th>E-mail</th></tr>
+        <tr><th>ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>Usuário&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>E-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr>
         {% for row in rows %}
         <tr>
            {% for col in row %}
-               <td>{{col}}</td>
+               <td>{{col}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
            {% endfor %}
         </tr>
         {% endfor %}
