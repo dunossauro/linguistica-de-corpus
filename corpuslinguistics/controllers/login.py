@@ -3,9 +3,6 @@ from bottle import Bottle, jinja2_view, post, request, redirect
 from wtforms import StringField, PasswordField, Form, fields, SubmitField
 from ..models.base import Base
 
-site.setup(engine)
-
-
 # -------------- Controle das views de concordancia
 cl_login = Bottle(True)
 
