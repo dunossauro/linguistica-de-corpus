@@ -2,11 +2,9 @@
 from bottle import Bottle, jinja2_view, post, request, redirect
 from wtforms import StringField, PasswordField, Form, fields, SubmitField
 from ..models.base import Base
-from bottle_admin import site
 
 site.setup(engine)
 
-loged = None
 
 # -------------- Controle das views de concordancia
 cl_login = Bottle(True)
@@ -39,7 +37,6 @@ def p_login():
     try:
         user = db.login(name, password)
         assert user != 0
-        loged = user[0][1]
         return redirect('/')
 
     except AssertionError:

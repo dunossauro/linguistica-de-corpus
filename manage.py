@@ -1,4 +1,4 @@
-u#!/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import os
@@ -22,7 +22,7 @@ app = SessionMiddleware(Bottle(), session_opts)
 app.wrap_app.merge(Routes)
 
 @app.wrap_app.error(404)
-@jinja2_view('corpuslinguistics/views/out/upload_error.html')
+@jinja2_view('corpuslinguistics/views/out/error.html')
 def error(error):
     return dict(out="Essa página não existe no sistema", title="404")
 
