@@ -57,7 +57,6 @@ def test():
     testRunner = unittest.runner.TextTestRunner()
     testRunner.run(tests)
 
-site.setup(app)
 
 if __name__ == "__main__":
     cmds()
