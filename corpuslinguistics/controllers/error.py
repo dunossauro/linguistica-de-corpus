@@ -18,3 +18,15 @@ def error_0():
 @jinja2_view('out/upload_error.html')
 def error_2():
     return dict(out="Um arquivo com esse nome já existe no sistema", title="Upload Error")
+
+# -------------- Página: Erro_db
+@cl_error.route('/error_db')
+@jinja2_view('out/upload_error.html')
+def error_2():
+    return dict(out="Cadastro não efetuado", title="Error")
+
+# -------------- Página: Erro_db1
+@cl_error.route('/error_db1')
+@jinja2_view('out/upload_error.html')
+def error_2():
+    return dict(out="Algo aconteceu com a sua base de dados, tente novamente", title="Error")
