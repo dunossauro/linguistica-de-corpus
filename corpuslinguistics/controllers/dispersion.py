@@ -12,7 +12,7 @@ cl_dispersion = Bottle(True)
 # -------------- Página: Dispersão
 @cl_dispersion.route('/dispersao')
 @jinja2_view('sistema/dispersao.html')
-def dispersao():
+def dispersao_page():
     return dict(title = 'Dispersão')
 
 # -------------- Post: Dispersão
