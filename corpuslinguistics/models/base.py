@@ -3,6 +3,7 @@
 
 # -------------- Imports
 import sqlite3
+from hashlib import sha512
 
 # -------------- Criação da tabela
 def c_table():
@@ -31,9 +32,23 @@ class Base:
 
     # -------------- Método que faz inserção no banco
 	def inserir_dados(self, nome, email, senha):
-		self.cur.execute(self.insert, (nome, email, senha))
+		senha = sha512(senha.encode())
+		self.cur.execute(self.insert, (nome, email, senha.hexdigest()))
 
 	def commit(self):
 		self.con.commit()
 
+	def login(self, nome, senha):
+
+		senha = sha512(senha.encode())
+		senha = senha.hexdigest()
+		result = self.cur.execute('SELECT * FROM USUARIOS WHERE NOME=?', (nome,))
+		result = result.fetchall()
+
+		try:
+			assert senha == result[0][3]
+			return result
+
+		except IndexError:
+			return 0
 c_table()

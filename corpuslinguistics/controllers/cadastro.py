@@ -2,7 +2,6 @@
 from bottle import Bottle, jinja2_view, post, request, redirect
 from wtforms import StringField, PasswordField, Form, fields, SubmitField
 from ..models.base import Base
-from hashlib import sha512
 
 # -------------- Controle das views de concordancia
 cl_cadastro = Bottle(True)
@@ -40,8 +39,7 @@ def cadastro():
         assert email != '' and "@" in email
         assert password != ''
 
-        password = sha512(password.encode()) # ----- Hashed password
-        db.inserir_dados(name,email, password.hexdigest())
+        db.inserir_dados(name,email, password)
         db.commit()
 
         return redirect('/')

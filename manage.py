@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+u#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import os
@@ -57,6 +57,7 @@ def test():
     testRunner = unittest.runner.TextTestRunner()
     testRunner.run(tests)
 
+site.setup(app)
 
 if __name__ == "__main__":
     cmds()
