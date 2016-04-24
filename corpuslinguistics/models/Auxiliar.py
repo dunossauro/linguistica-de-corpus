@@ -172,7 +172,7 @@ def concord(nome, arquivo):
     #Remove o arquivo do upload
     file_remove("concordancia",nome_e)
 
-def dispersao(palavra,arquivo):
+def dispersao(palavra, arquivo):
     """
     Essa função recebe um arquivo e uma palavra,
     Itera sobre eles com a regex procurando somente as frases onde a palavra existe e
