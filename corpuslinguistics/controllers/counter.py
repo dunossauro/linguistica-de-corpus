@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from bottle import Bottle, jinja2_view, post, request, redirect
 from ..models.Auxiliar import Auxiliar, contagem
+from ..models.graficos import Grap
 
 # -------------- Controle das views de contagem
 cl_counter = Bottle(True)
@@ -30,8 +31,7 @@ def upload_contador():
     if chave == 0:
         return redirect("/error_0")
     elif chave == 1:
-        contagem(arquivo.filename)
-        saida = open("/tmp/contador/saida.txt", "r")
+        saida = contagem(arquivo.filename)
         return dict(rows=saida, name="Word Counter")
     elif chave == 2:
         return redirect("/error_2")

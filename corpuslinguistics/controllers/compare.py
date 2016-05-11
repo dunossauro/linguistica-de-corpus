@@ -17,7 +17,7 @@ def comparacao():
 
 
 # -------------- Post: Comparação
-@cl_compare.post('/comparacao')
+@cl_compare.post('/compare')
 @jinja2_view('out/compare.html')
 def upload_conparacao():
     auxiliar = Auxiliar()

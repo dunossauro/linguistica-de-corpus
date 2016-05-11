@@ -115,19 +115,15 @@ def contagem(_arquivo):
 
     # Abertura do aquivo a ser lido
     arquivo_e = open("/tmp/contador/{arquivo}".format(arquivo=arquivo)).read()
-    # Abertura do arquivo de saida
-    arquivo_s = open("/tmp/contador/saida.txt","w")
 
     # tokenização do arquivo
-    token = Counter(arquivo_e.split())
+    token = regex.findall(arquivo_e)
 
-    for x in sorted(token):
-        arquivo_s.write("%s\t\t%s\n" % (x, token[x]))
-
-    arquivo_s.close()
+    # Contagem de tokens
+    return Counter(lower(token))
 
     #Remove o arquivo do upload
-    file_remove("contador",arquivo)
+    file_remove("contador",_arquivo)
 
 # Base to function: https://simplypython.wordpress.com/2014/03/14/saving-output-of-nltk-text-concordance/
 def concordance_2_txt(nome_p, tokens, left_margin=2, right_margin=4):
@@ -214,3 +210,6 @@ def dispersao(palavra, arquivo):
 
     #Remove o arquivo do upload
     file_remove("dispersao",arquivo)
+
+def lower(token):
+    return map(lambda x: x.lower(), token)

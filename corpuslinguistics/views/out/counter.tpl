@@ -9,11 +9,10 @@
           <th>Count</th>
         </tr>
         {% for row in rows %}
-        {% set x = row.split() %}
         <tr>
-            <td>{{ x[0] }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{ row }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
-            <td>{{ x[1]}}</td>
+            <td>{{ rows[row]}}</td>
          </tr>
          {% endfor %}
      </table>
