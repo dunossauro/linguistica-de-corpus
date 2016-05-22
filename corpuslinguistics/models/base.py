@@ -22,9 +22,16 @@ class Base:
         # -------------- Select
 		self.select = 'SELECT ID,NOME,EMAIL FROM USUARIOS'
 
+		# -------------- Select insert
+		self.select_in = 'SELECT EMAIL FROM USUARIOS WHERE EMAIL=(?)'
+
+
         # -------------- Insert
 		self.insert = 'INSERT INTO USUARIOS (NOME, EMAIL, SENHA) VALUES (?, ?, ?)'
 
+	def busca_replicada(self,email):
+		self.cur.execute(self.select_in, email)
+		return self.cur.fetchall()
 
 	def busca(self):
 		self.cur.execute(self.select)
@@ -32,6 +39,12 @@ class Base:
 
     # -------------- Método que faz inserção no banco
 	def inserir_dados(self, nome, email, senha):
+		busca = self.busca_replicada((email,))
+
+		if busca:
+			return "Usuário já cadastrado"
+		else: pass
+
 		senha = sha512(senha.encode())
 		self.cur.execute(self.insert, (nome, email, senha.hexdigest()))
 

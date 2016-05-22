@@ -13,8 +13,7 @@ cl_counter = Bottle(True)
 # -------------- Página: Contador
 @cl_counter.route('/contador')
 @jinja2_view('sistema/contador.html')
-def contador(upload=''):
-    return dict(title = 'Contador',
+def contador(upload=''):return dict(title = 'Contador',
                 upload = upload)
 
 # -------------- Post: Contador
@@ -32,6 +31,6 @@ def upload_contador():
         return redirect("/error_0")
     elif chave == 1:
         saida = contagem(arquivo.filename)
-        return dict(rows=saida, name="Word Counter")
+        return dict(rows=saida, name="Word Counter")#, graficos=out_grap
     elif chave == 2:
         return redirect("/error_2")

@@ -37,7 +37,7 @@ def upload_conparacao():
 
         compare(arquivo_0.filename,arquivo_1.filename)
         saida = open("/tmp/comparacao/saida.txt", "r")
-        return dict(rows=saida, name="Compare")
+        return dict(name="Compare", rows=saida)
 
     elif chave_0 and chave_1 == 2:
         return redirect("/error_2")
